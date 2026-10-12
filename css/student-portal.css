@@ -1,0 +1,56 @@
+/* =========================================================
+   Westbridge — student-portal.css  (student-portal.html only)
+   Dashboard layout: left rail + widget grid
+   ========================================================= */
+
+.portal { display: grid; grid-template-columns: 250px 1fr; min-height: 70vh; }
+.portal-rail { background: var(--green-deep); color: #c9d1cb; padding: 2rem 0; border-right: 1px solid var(--green-line); }
+.portal-rail .who { padding: 0 1.4rem 1.6rem; border-bottom: 1px solid var(--green-line); margin-bottom: 1rem; }
+.portal-rail .avatar { width: 56px; height: 56px; background: var(--gold); color: var(--green); display: grid; place-items: center; border-radius: 50%; font: 700 1.1rem var(--font-serif); margin-bottom: .7rem; }
+.portal-rail .who b { display: block; color: #fff; font-family: var(--font-serif); }
+.portal-rail .who span { font-size: .8rem; color: #93a097; }
+.portal-rail ul { list-style: none; margin: 0; padding: 0; }
+.portal-rail a { display: block; padding: .7rem 1.4rem; color: #c9d1cb; text-decoration: none; font-size: .9rem; border-left: 3px solid transparent; }
+.portal-rail a:hover, .portal-rail a[aria-current="page"] { background: rgba(198,179,142,.1); color: var(--gold); border-left-color: var(--gold); }
+
+.portal-main { padding: clamp(1.4rem, 3vw, 2.6rem); }
+.portal-title { display: flex; justify-content: space-between; align-items: end; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+.portal-title h1 { font-size: 1.9rem; margin: 0; }
+.portal-title p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.widgets { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.2rem; }
+.widget { background: var(--paper); border: 1px solid var(--rule); padding: 1.4rem; grid-column: span 4; }
+.widget.w6 { grid-column: span 6; } .widget.w8 { grid-column: span 8; } .widget.w12 { grid-column: span 12; }
+.widget h2 { font: 700 .72rem var(--font-sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 1rem; }
+.widget .big { font: 700 2.3rem/1 var(--font-serif); color: var(--green); }
+.widget .sub { font-size: .84rem; color: var(--muted); margin: .3rem 0 0; }
+.widget.accent { background: var(--green); background-image: var(--stripes); border-color: var(--green); border-bottom: 4px solid var(--gold); }
+.widget.accent h2 { color: var(--gold); } .widget.accent .big { color: #fff; } .widget.accent .sub { color: #c3ccc6; }
+
+.progress { height: 8px; background: rgba(255,255,255,.18); margin-top: 1rem; }
+.progress i { display: block; height: 100%; background: var(--gold); }
+
+.mini-table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 0; }
+.mini-table th, .mini-table td { padding: .6rem .3rem; border-top: 1px solid var(--rule); text-align: left; }
+.mini-table thead th { background: none; color: var(--muted); font: 700 .68rem var(--font-sans); letter-spacing: .1em; text-transform: uppercase; border-top: 0; }
+.pill { display: inline-block; padding: .15rem .6rem; border-radius: 99px; font-size: .72rem; font-weight: 700; background: var(--gold); color: var(--green); }
+.pill.ok { background: #dfe9d9; color: #2d5a2c; }
+.pill.due { background: #f2e1c9; color: #7a4a10; }
+
+.quick { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.quick a { display: block; padding: .8rem; background: var(--ivory); border: 1px solid var(--rule); text-decoration: none; font-size: .86rem; font-weight: 600; text-align: center; }
+.quick a:hover { border-color: var(--gold-ink); background: #fff; }
+
+@media (max-width: 960px) {
+  .portal { grid-template-columns: 1fr; }
+  .portal-rail { padding: 1rem 0; }
+  .portal-rail .who { display: none; }
+  .portal-rail ul { display: flex; flex-wrap: wrap; padding: 0 .6rem; }
+  .portal-rail a { border-left: 0; border-bottom: 3px solid transparent; padding: .5rem .8rem; }
+  .widget, .widget.w6, .widget.w8 { grid-column: span 12; }
+}
+
+.progress .w53 { width: 53%; }
+.plain { list-style: none; margin: 0; padding: 0; font-size: .92rem; }
+.plain li { padding: .45rem 0; border-top: 1px solid var(--rule); }
+.plain li:first-child { border-top: 0; }

@@ -1,0 +1,40 @@
+/* =========================================================
+   Westbridge — faculty-portal.css  (faculty-portal.html only)
+   Top-tabbed workspace: toolbelt grid + queues
+   ========================================================= */
+
+.fp-banner { background: var(--green); background-image: var(--stripes); color: #d6d9d0; padding-block: 2.6rem 4.2rem; border-bottom: 4px solid var(--gold); }
+.fp-banner .wrap { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; }
+.fp-banner h1 { color: #fff; margin: 0 0 .3rem; font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+.fp-banner p { margin: 0; }
+.fp-search { display: flex; min-width: min(100%, 360px); }
+.fp-search input { flex: 1; padding: .85rem 1rem; border: 0; font: inherit; border-radius: 3px 0 0 3px; }
+.fp-search button { background: var(--gold); color: var(--green); border: 0; padding: 0 1.3rem; font: 700 .8rem var(--font-sans); letter-spacing: .08em; text-transform: uppercase; border-radius: 0 3px 3px 0; cursor: pointer; }
+
+.fp-wrap { margin-top: -2.4rem; position: relative; }
+.toolbelt { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.tool { display: block; background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--gold); padding: 1.3rem 1.2rem; text-decoration: none; color: var(--ink); box-shadow: var(--shadow); transition: transform .2s; }
+.tool:hover { transform: translateY(-3px); color: var(--ink); border-top-color: var(--green); }
+.tool b { display: block; font: 700 1rem var(--font-serif); color: var(--green); margin-bottom: .25rem; }
+.tool span { font-size: .84rem; color: var(--muted); }
+
+.fp-cols { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.6rem; margin-top: 2.4rem; }
+.panel { background: var(--paper); border: 1px solid var(--rule); }
+.panel + .panel { margin-top: 1.6rem; }
+.panel header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.3rem; border-bottom: 1px solid var(--rule); background: var(--ivory); }
+.panel header h2 { margin: 0; font-size: 1.05rem; }
+.panel header a { font-size: .8rem; font-weight: 700; }
+.queue { list-style: none; margin: 0; padding: 0; }
+.queue li { display: grid; grid-template-columns: 1fr auto; gap: .8rem; padding: .95rem 1.3rem; border-bottom: 1px solid var(--rule); font-size: .9rem; }
+.queue li:last-child { border-bottom: 0; }
+.queue b { color: var(--green); display: block; }
+.queue small { color: var(--muted); }
+.count { align-self: center; background: var(--green); color: var(--gold); font: 700 .8rem var(--font-sans); padding: .25rem .7rem; border-radius: 99px; }
+.count.warn { background: var(--gold); color: var(--green); }
+.sched { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 0; }
+.sched th, .sched td { padding: .7rem 1.3rem; text-align: left; border-bottom: 1px solid var(--rule); }
+.sched thead th { font: 700 .68rem var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: none; }
+
+@media (max-width: 860px) { .fp-cols { grid-template-columns: 1fr; } }
+
+.toolbelt { list-style: none; margin: 0; padding: 0; }
